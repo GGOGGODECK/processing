@@ -1,0 +1,60 @@
+int x_ball;
+int y_ball;
+
+int x_bar;
+
+int speed = 4;
+int speed2 = 4;
+
+
+void setup() {
+  size(800, 400);
+  
+  x_ball = width/2;
+  y_ball = 0;
+  
+  x_bar = width/2;
+}
+
+void draw() {
+  background(255);
+  ball();      
+  bar();
+}
+
+void keyPressed() {
+  if(keyCode == LEFT) {
+    x_bar = x_bar - 20;
+  }
+  if(keyCode == RIGHT) {
+    x_bar = x_bar + 20;
+  }
+  println(x_bar);
+}
+
+void ball() {
+  fill(50, 100, 100);
+  ellipse(x_ball, y_ball, 50, 50);
+  x_ball = x_ball + speed;
+  if(x_ball > width || x_ball < 0) {
+    speed = speed * -1;}
+    
+  y_ball = y_ball + speed2;
+  if(y_ball > 380 && x_bar - 75 < x_ball && x_ball < x_bar + 75 || y_ball < 0 ) {
+    
+    speed2 = speed2 * -1;  }
+    
+   
+  if(y_ball > 410)
+  {
+  exit();
+  }
+  
+  
+}
+
+void bar() {
+  rectMode(CENTER);
+  fill(200, 100, 100);
+  rect(x_bar, height-10, 150, 10);
+}
