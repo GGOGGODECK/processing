@@ -1,0 +1,95 @@
+int x_ball =  50 ;
+int y_ball = 400 ;
+
+int x_far = 5;
+int y_far = 4;
+
+
+
+
+
+
+
+void setup () {
+  
+  size(1200, 600);
+  
+}
+
+void draw () {
+  background(255, 255, 255);
+  
+  fill(255, 255, 0);
+  ellipse(x_ball, y_ball , 50, 50);
+  
+  y_ball = y_ball + y_far;
+  
+  if (y_ball > 650)
+    { exit();}
+  
+   fill(0, 0, 255);
+    quad(200, 600, 200, 525, 0, 525, 0, 600);
+  
+  
+  fill(0, 0, 255);
+    quad(300, 600, 300, 525, 400, 525, 400, 600);
+  
+  
+  fill(0, 0, 255);
+    quad(550, 450, 550, 600, 700, 600, 700, 450);
+  
+  if (x_ball < 550) {
+  
+  if (y_ball == 500 && x_ball < 200 && x_ball > 0 || y_ball == 300) {
+    
+    y_far = y_far * -1;}
+    
+    
+    
+    
+    
+    
+   
+  
+  
+  if (y_ball > 500 && x_ball < 400 && x_ball >300 ) {
+    
+    y_far = y_far * -1;}
+  
+  }
+  
+  
+  if (x_ball > 550) {
+    
+    if (y_ball > 425 && x_ball < 700 && x_ball > 550 || y_ball < 225) {
+    
+    y_far = y_far * -1;}
+    
+    
+   
+  
+  
+  
+    
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+}
+
+
+void keyPressed() {
+  if(keyCode == LEFT) {
+    x_ball = x_ball - 7;
+  }
+  if(keyCode == RIGHT) {
+    x_ball = x_ball + 7;
+  }
+  println(x_ball);
+}
