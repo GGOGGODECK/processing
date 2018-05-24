@@ -1,0 +1,56 @@
+float x_star = 600;
+float y_star = 700;
+
+float x_gun = 700;
+
+
+ 
+
+void setup () {
+  size (1200, 800);}
+  
+  void draw (){
+    
+    background(0);
+  translate(x_star, y_star);
+  fill(255, 255, 0);
+  stroke(125, 125, 0);
+  strokeWeight(2);
+  beginShape();
+  vertex(0, -50);
+  vertex(14, -20);
+  vertex(47, -15);
+  vertex(23, 7);
+  vertex(29, 40);
+  vertex(0, 25);
+  vertex(-29, 40);
+  vertex(-23, 7);
+  vertex(-47, -15);
+  vertex(-14, -20);
+  endShape(CLOSE);
+  
+  
+  
+  
+  
+ }
+ 
+ 
+ 
+ void keyPressed() {
+  if(keyCode == LEFT) {
+    x_star = x_star - 7;
+  }
+  if(keyCode == RIGHT) {
+    x_star = x_star + 7;
+  }
+  println(x_star);
+  
+  
+  if(keyCode == 'b') {
+    fill(255);
+    ellipse(x_star, x_gun, 100, 100);
+    x_gun = x_gun - 10;
+    
+}
+ }
