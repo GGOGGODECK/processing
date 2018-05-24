@@ -1,0 +1,127 @@
+float x_ball = 30;
+float y = 350;
+
+float speed = 0;
+float gravity = 0.2;
+
+float b = 300;
+float a = 625;
+
+
+
+
+
+void setup() {
+  size(1200, 600);
+}
+
+void draw () {
+  background(255);
+  
+  
+  
+  y = y + speed;
+  speed = speed + gravity;
+  
+ 
+  
+  fill(0, 0, 255);
+    quad(200, 600, 200, 525, 0, 525, 0, 600);
+  
+  
+  fill(0, 0, 255);
+    quad(300, 600, 300, 525, 400, 525, 400, 600);
+  
+  
+  fill(0, 0, 255);
+    quad(550, 450, 550, 600, 700, 600, 700, 450);
+  
+  
+  
+
+  
+  if (y > 650)
+  {exit();}
+  
+  
+  
+  
+  
+  if (y > height - 100 && x_ball < 400 && x_ball > 300) {
+    speed = speed*-0.95;
+    
+    y = height - 100;
+  }
+  
+  
+  if (y > height - 100 && x_ball < 200 && x_ball > 0) {
+    speed = speed*-0.95;
+    
+    y = height - 100;
+  }
+  
+  if (y > height - 175 && x_ball < 700 && x_ball > 550 ) {
+    speed = speed*-0.95;
+    
+    y = height - 175;
+  }
+  
+ 
+  fill(255, 255, 0);
+  noStroke();
+  ellipse(x_ball, y, 50, 50);
+  
+  
+  boolean a = x_ball > 625;
+if (!a) {
+  translate(625, 380);
+  fill(102);
+  stroke(255);
+  strokeWeight(2);
+  beginShape();
+  vertex(0, -50);
+  vertex(14, -20);
+  vertex(47, -15);
+  vertex(23, 7);
+  vertex(29, 40);
+  vertex(0, 25);
+  vertex(-29, 40);
+  vertex(-23, 7);
+  vertex(-47, -15);
+  vertex(-14, -20);
+  endShape(CLOSE);
+}
+if (a) {
+  translate(625, 380);
+  fill(255);
+  stroke(255);
+  strokeWeight(2);
+  beginShape();
+  vertex(0, -50);
+  vertex(14, -20);
+  vertex(47, -15);
+  vertex(23, 7);
+  vertex(29, 40);
+  vertex(0, 25);
+  vertex(-29, 40);
+  vertex(-23, 7);
+  vertex(-47, -15);
+  vertex(-14, -20);
+  endShape(CLOSE);
+}
+ 
+}
+  
+  
+  
+
+
+void keyPressed() {
+  if(keyCode == LEFT) {
+    x_ball = x_ball - 7;
+  }
+  if(keyCode == RIGHT) {
+    x_ball = x_ball + 7;
+  }
+  println(x_ball);
+}
