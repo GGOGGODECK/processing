@@ -1,0 +1,165 @@
+float x_ball = 30;
+float y = 350;
+
+float speed = 0;
+float gravity = 0.2;
+
+float b = 300;
+float a = 625;
+float bar = 700;
+float bar2 = 800;
+float move = 3;
+float cannon = 0;
+
+void setup() {
+  size(1200, 600);
+}
+
+void draw () {
+  background(255);
+  x_ball = x_ball + cannon;
+  
+  
+  y = y + speed;
+  speed = speed + gravity;
+  
+ 
+  
+  fill(0, 0, 255);
+    quad(200, 600, 200, 525, 0, 525, 0, 600);
+  
+  
+  fill(0, 0, 255);
+    quad(300, 600, 300, 525, 400, 525, 400, 600);
+  
+  
+  fill(0, 0, 255);
+    quad(550, 525, 550, 600, 700, 600, 700, 525);
+    
+    quad(650, 350, 650, 375, 675, 375, 675, 350);
+  
+  fill(255, 255, 255);
+  triangle(655, 355, 655, 370, 670, 362);
+  
+   if (y > height - 100 && x_ball < 1200 && x_ball > 1100 && y <550 ) {
+    speed = speed*-0.95;
+    
+    y = height - 100;
+  }
+  
+  fill(0, 0, 255);
+  quad(1100, 525, 1100, 600, 1200, 600, 1200, 525);
+  
+  if (x_ball > 650 && x_ball < 675 && y < 365 && y > 340)
+  {cannon = 10;
+  speed = 0;
+  gravity = 0;
+}
+  
+  
+  
+  
+  
+  
+
+  
+  if (y > 650)
+  
+  {
+    textSize(50);
+    text("You die", 600, 300);
+  fill(255, 0, 0);
+  text("Press Enter to continue", 600, 400);
+speed = 0;
+
+}
+  
+  
+
+  
+  
+  if (y > height - 100 && x_ball < 400 && x_ball > 300&& y <550 ) {
+    speed = speed*-0.95;
+    
+    y = height - 100;
+  }
+  
+  
+  if (y > height - 100 && x_ball < 200 && x_ball > 0 && y <550) {
+    speed = speed*-0.95;
+    
+    y = height - 100;
+  }
+  
+  if (y > height - 100 && x_ball < 700 && x_ball > 550 && y <550 ) {
+    speed = speed*-0.95;
+    
+    y = height - 100;
+  }
+  
+ 
+ 
+  fill(255, 255, 0);
+  noStroke();
+  ellipse(x_ball, y, 50, 50);
+  stroke(0);
+  
+  boolean a = x_ball > 1125;
+if (!a) {
+  translate(1150, 450);
+  fill(255, 255, 0);
+  
+  strokeWeight(2);
+  beginShape();
+  vertex(0, -50);
+  vertex(14, -20);
+  vertex(47, -15);
+  vertex(23, 7);
+  vertex(29, 40);
+  vertex(0, 25);
+  vertex(-29, 40);
+  vertex(-23, 7);
+  vertex(-47, -15);
+  vertex(-14, -20);
+  endShape(CLOSE);
+}
+if (x_ball > 1125) {
+  text("You win", 600, 300);
+  textSize(50);
+}
+
+
+
+
+
+
+
+
+
+
+ 
+}
+  
+  
+  
+
+
+void keyPressed() {
+  if(keyCode == LEFT) {
+    x_ball = x_ball - 7;
+    gravity = 0.2;
+    cannon = 0;
+  }
+  if(keyCode == RIGHT) {
+    x_ball = x_ball + 7;
+    gravity = 0.2;
+    cannon = 0;
+  }
+  if(keyCode == ENTER)
+  {x_ball = 30;
+  gravity = 0.2;
+    cannon = 0;
+  
+  y = 350;}
+  println(x_ball);
+}
